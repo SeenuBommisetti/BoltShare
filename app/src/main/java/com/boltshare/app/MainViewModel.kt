@@ -188,7 +188,7 @@ class MainViewModel : ViewModel() {
                     // 100MB limit check (Constraint specified)
                     val sizeInMb = (_selectedFileSize.value ?: 0) / (1024 * 1024)
                     if (sizeInMb > 100) {
-                        _errorMessage.value = "File exceeds 100MB simulation limit."
+                        _errorMessage.value = "File exceeds Max sharing limit."
                         _selectedFileUri.value = null
                         _selectedFileName.value = null
                         _selectedFileSize.value = null
@@ -427,6 +427,7 @@ class MainViewModel : ViewModel() {
                 }
                 
                 _localDownloads.value = _localDownloads.value + (transfer.transferId to LocalDownloadState(progress = 100, status = "completed", localUri = uri))
+                db.collection("transfers").document(transfer.transferId).update("status", "completed")
                 
             } catch (e: Exception) {
                 Log.e("Download", "Failed to download", e)

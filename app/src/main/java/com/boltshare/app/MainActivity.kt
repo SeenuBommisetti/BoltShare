@@ -179,7 +179,7 @@ fun DashboardScreen(viewModel: MainViewModel, modifier: Modifier = Modifier) {
         if (activeTransfer != null && activeTransfer!!.status == "uploading") {
             val t = activeTransfer!!
             Column(modifier = Modifier.fillMaxWidth()) {
-                Text("Simulating Upload to ${t.receiverCode}...", fontSize = 14.sp)
+                Text("Sending file(s) to ${t.receiverCode}...", fontSize = 14.sp)
                 Spacer(modifier = Modifier.height(4.dp))
                 LinearProgressIndicator(
                     progress = { t.progress / 100f },
@@ -198,7 +198,7 @@ fun DashboardScreen(viewModel: MainViewModel, modifier: Modifier = Modifier) {
                 Spacer(modifier = Modifier.width(8.dp))
                 Text("Send File", fontSize = 16.sp, fontWeight = FontWeight.Bold)
             }
-            if (activeTransfer?.status == "sent") {
+            if (activeTransfer?.status == "sent" || activeTransfer?.status == "completed") {
                  Text("Sent successfully!", color = MaterialTheme.colorScheme.primary, fontWeight = FontWeight.Medium, modifier = Modifier.padding(top = 12.dp))
             }
         }
