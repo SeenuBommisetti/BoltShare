@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "252660995048",
+    "project_id": "boltshare-369d6",
+    "storage_bucket": "boltshare-369d6.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:252660995048:android:0bb934a3459d5f78820a5d",
+        "android_client_info": {
+          "package_name": "com.boltshare.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD44fWxiWC9SmFzyUrzkF0kczxk2JPIXcY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
